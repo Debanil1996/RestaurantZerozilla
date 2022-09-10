@@ -1,0 +1,17 @@
+<div >
+  <mat-card class="store-card" >
+    <mat-card-title-group>
+      <mat-card-title>{{product?.title}}</mat-card-title>
+      <mat-card-subtitle>{{product?.category}}</mat-card-subtitle>
+      <img mat-card-sm-image [src]="product?.image" >
+    </mat-card-title-group>
+    <mat-card-content>
+      <div (click)="navigateProductDetails()">
+        {{product.description}}
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="addToCart()">Add To Cart</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

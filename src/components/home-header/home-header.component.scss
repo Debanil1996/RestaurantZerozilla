@@ -1,0 +1,54 @@
+:host {
+  display: block;
+}
+
+.headcontainer{
+  margin-top: 1rem;
+
+}
+
+.search {
+  width: 100%;
+}
+
+.searchTerm {
+  width: 100%;
+    border: 3px solid #ed9dec;
+    padding: 5px;
+    height: 28px;
+    border-radius: 12px;
+    color: #000000;
+}
+
+.searchTerm:focus{
+  color: #00B4CC;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.badge {
+  box-sizing: border-box;
+  display: inline-block;
+  background-color: red;
+  color: white;
+
+  border-radius: 3rem;
+  text-align: center;
+
+  font-size: 1.6rem;
+  font-weight: 400;
+  padding: .05rem .8rem .1rem;
+  line-height: inherit;
+  position: absolute;
+    top: 0;
+    left: calc(100% - 43%);
+}
+
+.badge--small {
+  font-size: 0.8rem;
+}

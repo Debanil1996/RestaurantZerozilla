@@ -1,0 +1,42 @@
+
+<res-spinner *ngIf="loading"></res-spinner>
+<main>
+  <header>
+    <app-home-header [productData]="productData" (setFiltered)="setFiltered($event)"></app-home-header>
+  </header>
+  <div>
+    <div class="custom-container">
+      <ng-container *ngIf="filteredProducts">
+        <div class="grid-structure">
+          <div *ngFor="let product of filteredProducts">
+            <res-cards [product]="product"></res-cards>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="!filteredProducts">
+        <h1>Categories</h1>
+        <div>
+          <ng-container *ngFor="let category of object.keys(storeData)">
+            <div class="row">
+              <mat-expansion-panel hideToggle>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    <h2>{{category | titlecase}}</h2>
+                  </mat-panel-title>
+                  </mat-expansion-panel-header>
+
+                    <div class="grid-structure">
+                      <ng-container *ngFor="let data of storeData[category]">
+                        <res-cards [product]="data"></res-cards>
+                      </ng-container>
+                    </div>
+              </mat-expansion-panel>
+            </div>
+
+          </ng-container>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <footer></footer>
+</main>
